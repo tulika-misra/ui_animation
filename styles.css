@@ -1,0 +1,350 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans:wght@400;700&display=swap');
+
+/* Overall Style */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #faf0df;
+  color: #333333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  height: 100vh;
+  transition: background-color 0.5s ease;
+}
+
+/* Header Section */
+header {
+  background-color: #b8e0d2;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: header;
+  transition: transform 0.5s ease-in-out;
+}
+
+header:hover {
+  transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #4a5d5a;
+  transition: color 0.3s ease;
+}
+
+header h1:hover {
+  color: #f9c2b8; /* Highlight on hover */
+}
+
+header p {
+  font-size: 1.5rem;
+  color: #4a5d5a;
+  transition: color 0.3s ease;
+}
+
+header p span {
+  font-weight: bold;
+  color: #f9c2b8;
+}
+
+/* Navigation Section */
+nav {
+  background-color: #d6aefc;
+  padding: 15px 0;
+  width: 100%;
+}
+
+nav .nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #f9c2b8;
+  transition: width 0.3s ease;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav ul li a:hover {
+  color: #f9c2b8;
+  transform: translateY(-3px); /* Lift effect */
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Main Content Sections */
+main {
+  padding: 50px 20px;
+  width: 100%;
+  grid-area: main;
+}
+
+/* Sections within Main */
+section {
+  padding: 50px 20px;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #4a5d5a;
+  position: relative;
+  overflow: hidden;
+}
+
+section h2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f9c2b8;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+section h2:hover::before {
+  transform: scaleX(1); /* Underline animation */
+}
+
+section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #666666;
+  transition: color 0.3s ease;
+}
+
+section p span {
+  font-weight: bold;
+  color: #f9c2b8;
+}
+
+/* Portfolio Section */
+.portfolio-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust to allow larger images */
+  gap: 20px;
+  margin-bottom: 40px;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item {
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  object-fit: cover; /* Ensures the image covers the available space */
+}
+
+.portfolio-item:hover .portfolio-image img {
+  transform: scale(1.1); /* Slight zoom on image hover */
+}
+
+.portfolio-description {
+  padding: 20px;
+  background-color: #fef5e7;
+  flex-grow: 1;
+  transition: background-color 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-description {
+  background-color: #f9c2b8; /* Change background on hover */
+}
+
+.portfolio-description h3 {
+  font-size: 1.8rem;
+  color: #4a5d5a;
+}
+
+.portfolio-description p {
+  font-size: 1rem;
+  color: #666666;
+}
+
+/* Footer Section */
+footer {
+  background-color: #f9c2b8;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 50px;
+  width: 100%;
+  grid-area: footer;
+  transition: background-color 0.3s ease;
+}
+
+footer:hover {
+  background-color: #d6aefc; /* Subtle color shift on hover */
+}
+
+footer p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+footer .footer-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .footer-nav ul li {
+  margin: 0 15px;
+}
+
+footer .footer-nav ul li a {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .footer-nav ul li a:hover {
+  color: #f9c2b8;
+  transform: translateY(-3px); /* Lift effect */
+}
+
+/* Layout/Responsive */
+
+/* Screens Smaller Than 768px */
+@media (max-width: 768px) {
+  body {
+    padding: 0 10px;
+  }
+
+  /* Navigation */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  /* Projects Section */
+  .portfolio-items {
+    grid-template-columns: 1fr 1fr; /* 2 columns on medium screens */
+    gap: 15px;
+  }
+
+  .portfolio-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust header font size */
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Screens Smaller Than 480px */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1.2rem;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+
+  section p {
+    font-size: 1rem;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+
+  footer .footer-nav ul li {
+    margin: 0 10px;
+  }
+
+  /* Projects Section */
+  .portfolio-items {
+    grid-template-columns: 1fr; /* 1 column on smaller screens */
+  }
+
+  .portfolio-item {
+    width: 100%;
+  }
+}
